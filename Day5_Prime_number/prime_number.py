@@ -4,7 +4,7 @@
 # @Author    :Abraham
 # @Software  :PyCharm
 
-# python program to find all prime numbers in an interval a, b
+# python program to find all prime numbers in range n 
 def prime(n):
     primes = []
     for number in range(1, n + 1):
