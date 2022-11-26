@@ -18,38 +18,36 @@ def count_down(time_in_second):
     print("Time is up!!!")
 
 
-t_in_sec = int(input("Enter the time in seconds: "))
-count_down(t_in_sec)
+# t_in_sec = int(input("Enter the time in seconds: "))
+# count_down(t_in_sec)
 
 
+#  pomodoro timer
 def break_time():
-    t = 5
+    t = 5 * 60  # 5 minutes for break
     while t:
         mins, secs = divmod(t, 60)
         timer = '{:02d}:{:02d}'.format(mins, secs)
-        # print(timer, end="\r")
+        # print(timer, end="\r") # overwrite previous output, not working in pycharm
         print(timer)
         time.sleep(1)
         t -= 1
 
 
-# pomodoro timer
 def pomodoro():
-    work_time = 10  # 25 minute for work
-    break_t = 5  # 5 minutes for break
+    work_time = 25 * 60  # 25 minutes for work
     print("Pomodoro started, start Working now!!")
-    for i in range(2):  # four intervals of 25 minute work time followed by 5 minute break
-        while work_time:
-            mins, secs = divmod(work_time, 60)
-            timer = '{:02d}:{:02d}'.format(mins, secs)
-            # print(timer, end="\r") # overwrite previous line, not working in pycharm
-            print(timer)
-            time.sleep(1)
-            work_time -= 1
-        print("Break Time!!")
-        break_time()
-        print("Work time!!")
+    while work_time:
+        mins, secs = divmod(work_time, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        # print(timer, end="\r") # overwrite previous line, not working in pycharm
+        print(timer)
+        time.sleep(1)
+        work_time -= 1
+    print("Break Time!!")
+    break_time()
+    print("Work time!!")
 
 
-# pomodoro()
-
+for i in range(4):  # four intervals of 25 minutes followed by 5 minutes break
+    pomodoro()
