@@ -49,8 +49,9 @@ pathlabel.pack()
 Button(root, text="Browse a File", command=browse).pack()
 Button(root, text="Create and Save the Audio File", command=save).pack()
 
-m = 0
-f = 1
+m = IntVar()
+f = IntVar()
+
 Checkbutton(root, text="Male Voice", onvalue=0, offvalue=10, variable=m).pack()
 Checkbutton(root, text="Female Voice", onvalue=1, offvalue=10, variable=f).pack()
 
